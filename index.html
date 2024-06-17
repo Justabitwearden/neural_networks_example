@@ -220,7 +220,7 @@
             }
 
             // Determine the decision based on the scaled neuron values
-            const output = -Math.max(0, neuronActivations[0]) - 20 * Math.max(0, neuronActivations[1]) - 5 * Math.max(0, neuronActivations[2]) + 2 * Math.max(0, neuronActivations[3]) - 20 * Math.max(0, neuronActivations[4])
+            const output = 10 - Math.max(0, neuronActivations[0]) - 20 * Math.max(0, neuronActivations[1]) - 5 * Math.max(0, neuronActivations[2]) + 2 * Math.max(0, neuronActivations[3]) - 20 * Math.max(0, neuronActivations[4])
             let decision = "No";
             if (output >= 1) {
                 decision = "Yes";
