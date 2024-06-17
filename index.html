@@ -144,23 +144,23 @@
         <div class="neuron-group">
             <div><h2>Neuron Activations:</h2></div>
             <div class="neuron-box" id="neuron1Box">
-                Neuron 1: <span id="neuron1">-21.9</span> (Scaled: <span id="neuron1Scaled">0</span>)
+                Neuron 1: <span id="neuron1">-21.9</span> <span id="neuron1Scaled"></span>
                <input type="text" id="neuron1Text" class="neuron-text" placeholder="Function...">
            </div>
            <div class="neuron-box" id="neuron2Box">
-                Neuron 2: <span id="neuron2">-1.5</span> (Scaled: <span id="neuron2Scaled">0</span>)
+                Neuron 2: <span id="neuron2">-1.5</span> <span id="neuron2Scaled"></span>
                 <input type="text" id="neuron2Text" class="neuron-text" placeholder="Function...">
            </div>
            <div class="neuron-box" id="neuron3Box">
-               Neuron 3: <span id="neuron3">-4</span> (Scaled: <span id="neuron3Scaled">0</span>)
+               Neuron 3: <span id="neuron3">-4</span> <span id="neuron3Scaled"></span>
                <input type="text" id="neuron3Text" class="neuron-text" placeholder="Function...">
            </div>
            <div class="neuron-box" id="neuron4Box">
-               Neuron 4: <span id="neuron4">-3</span> (Scaled: <span id="neuron4Scaled">0</span>)
+               Neuron 4: <span id="neuron4">-3</span> <span id="neuron4Scaled"></span>
                <input type="text" id="neuron4Text" class="neuron-text" placeholder="Function...">
             </div>
             <div class="neuron-box" id="neuron5Box">
-                Neuron 5: <span id="neuron5">-2.9</span> (Scaled: <span id="neuron5Scaled">0</span>)
+                Neuron 5: <span id="neuron5">-2.9</span> <span id="neuron5Scaled"></span>
                <input type="text" id="neuron5Text" class="neuron-text" placeholder="Function...">
             </div>
         </div>
@@ -209,7 +209,11 @@
                 const activation = neuronActivations[i-1].toFixed(1);
                 const scaledActivation = Math.max(0, neuronActivations[i-1]).toFixed(1);
                 document.getElementById(`neuron${i}`).textContent = activation;
-                document.getElementById(`neuron${i}Scaled`).textContent = scaledActivation;
+                if (scaledActivation > 0) {
+                    document.getElementById(`neuron${i}Scaled`).textContent = "ACTIVE";
+                } else {
+                    document.getElementById(`neuron${i}Scaled`).textContent = "(Inactive)";
+                }
 
                 const neuronBox = document.getElementById(`neuron${i}Box`);
                 neuronBox.style.backgroundColor = getColorForActivation(activation);
