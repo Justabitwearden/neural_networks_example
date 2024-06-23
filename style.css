@@ -1,0 +1,84 @@
+body {
+            font-family: Arial, sans-serif;
+        }
+        svg {
+            border: 0px solid #ccc;
+            width: 100%
+        }
+        .node {
+            cursor: pointer;
+            fill: #69b3a2;
+        }
+        .node text {
+            pointer-events: none;
+        }
+        @keyframes chase {
+    0% {
+        stroke-dasharray: 100, 100;
+        stroke-dashoffset: 100;
+    }
+    50% {
+        stroke-dasharray: 100, 100;
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dasharray: 100, 100;
+        stroke-dashoffset: -100;
+    }
+}
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+    stroke-width: 2px;
+}
+.chaser {
+    stroke: #83021f;
+    stroke-opacity: 0.6;
+    stroke-width: 3px;
+    animation: chase 2s infinite ease-in-out;
+}
+ .input-group {
+            background-color: #badbed;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .input-group label {
+            display: block;
+            margin: 5px;
+        }
+        .input-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .slider-value {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .neuron-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .neuron-box {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            flex: 1;
+            background-color: #ffffff
+        }
+        .result {
+            
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+        .neuron-text {
+            width: 100%;
+            margin-top: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            text-align: center;
+        }
